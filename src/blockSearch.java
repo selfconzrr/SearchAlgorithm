@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class blockSearch {
 
-	private int[] index; // ½¨Á¢Ë÷Òı
+	private int[] index; // å»ºç«‹ç´¢å¼•
 	private ArrayList[] list;
 
 	public blockSearch(int[] index) {
@@ -10,7 +10,7 @@ public class blockSearch {
 			this.index = index;
 			this.list = new ArrayList[index.length];
 			for (int i = 0; i < list.length; i++) {
-				list[i] = new ArrayList();// ³õÊ¼»¯Èı¸öÈİÆ÷
+				list[i] = new ArrayList();// åˆå§‹åŒ–ä¸‰ä¸ªå®¹å™¨
 			}
 		} else {
 			throw new Error("index cannot be null or empty");
@@ -18,15 +18,15 @@ public class blockSearch {
 	}
 
 	/**
-	 * ²åÈëÔªËØ
+	 * æ’å…¥å…ƒç´ 
 	 */
 	public void insert(int value) {
-		int i = binarysearch(value);// ¶ş·Ö²éÕÒÈ·¶¨²åÈëÄÄ¸ö¿é
-		list[i].add(value);// ½«ÔªËØ²åÈëµ½¶ÔÓ¦µÄ¿é
+		int i = binarysearch(value);// äºŒåˆ†æŸ¥æ‰¾ç¡®å®šæ’å…¥å“ªä¸ªå—
+		list[i].add(value);// å°†å…ƒç´ æ’å…¥åˆ°å¯¹åº”çš„å—
 	}
 
 	/**
-	 * ¶ş·Ö²éÕÒ
+	 * äºŒåˆ†æŸ¥æ‰¾
 	 */
 	private int binarysearch(int value) {
 		int start = 0;
@@ -37,20 +37,20 @@ public class blockSearch {
 			if (index[mid] > value) {
 				end = mid - 1;
 			} else {
-				start = mid + 1;// Èç¹ûÏàµÈ£¬Ò²²åÈëºóÃæ
+				start = mid + 1;// å¦‚æœç›¸ç­‰ï¼Œä¹Ÿæ’å…¥åé¢
 			}
 		}
 		return start;
 	}
 
 	/**
-	 * ²éÕÒÔªËØ
+	 * æŸ¥æ‰¾å…ƒç´ 
 	 */
 	public boolean search(int data) {
-		int i = binarysearch(data);// ÏÈ¶ş·Ö²éÕÒÈ·¶¨ÔÚÄÄ¸ö¿é
-		for (int j = 0; j < list[i].size(); j++) {// È»ºóË³Ğò²éÕÒÔÚ¸Ã¿éÄÚÄÄ¸öÎ»ÖÃ
+		int i = binarysearch(data);// å…ˆäºŒåˆ†æŸ¥æ‰¾ç¡®å®šåœ¨å“ªä¸ªå—
+		for (int j = 0; j < list[i].size(); j++) {// ç„¶åé¡ºåºæŸ¥æ‰¾åœ¨è¯¥å—å†…å“ªä¸ªä½ç½®
 			if (data == (int) list[i].get(j)) {
-				System.out.println(String.format("²éÕÒÔªËØÎª  %d µÚ: %d¿é  µÚ%d¸ö ÔªËØ",
+				System.out.println(String.format("æŸ¥æ‰¾å…ƒç´ ä¸º  %d ç¬¬: %då—  ç¬¬%dä¸ª å…ƒç´ ",
 						data, i + 1, j + 1));
 				return true;
 			}
@@ -59,7 +59,7 @@ public class blockSearch {
 	}
 
 	/**
-	 * ´òÓ¡Ã¿¿éÔªËØ
+	 * æ‰“å°æ¯å—å…ƒç´ 
 	 */
 	public void printAll() {
 		for (int i = 0; i < list.length; i++) {
@@ -73,7 +73,7 @@ public class blockSearch {
 	}
 
 	public static void test() {
-		int[] index = { 10, 20, 30 };// ÒÔ¸ÃÊı×éÀïµÄÖµ×÷Îª·Ö¿éµÄ±ê×¼
+		int[] index = { 10, 20, 30 };// ä»¥è¯¥æ•°ç»„é‡Œçš„å€¼ä½œä¸ºåˆ†å—çš„æ ‡å‡†
 		blockSearch blocksearch = new blockSearch(index);
 		blocksearch.insert(1);
 		blocksearch.insert(12);

@@ -24,8 +24,8 @@ public class mainSearch {
 
 	public static void main(String[] args) {
 		int[] array = new int[] { 2,5,8,9,11,16,20,23,999,1000 };
-		System.out.println("顺序查找999的位置在：" + orderSearch(array, 999));
-		System.out.println("折半查找999的位置在：" + biSearch(array, 999));
+		System.out.println("椤哄簭鏌ユ壘999" + orderSearch(array, 999));
+		System.out.println("浜屽垎鏌ユ壘999" + biSearch(array, 999));
 		blockSearch.test();
 	}
 }
